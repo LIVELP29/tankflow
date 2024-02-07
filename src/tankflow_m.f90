@@ -5,7 +5,7 @@ module tankflow_m
     real, parameter :: Patmo = 101325.          ! atmospheric pressure at sea level [Pa]
     real, parameter :: GAM = 1.4                ! specific heat ratio of air
     real, parameter :: GRAVITY = 9.81           ! acceleration on earth [kg/m-s2]
-    integer, parameter, public :: nmax = 100
+    integer, parameter, public :: nmax = 10000
     public :: tank_t, orifice_t
     public :: exportfcn
   
