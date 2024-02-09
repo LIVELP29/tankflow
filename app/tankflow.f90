@@ -25,12 +25,12 @@ program tankflow
   ! INITIAL
   i_current = 1
 
-  call tank%init_tk(10.0, 40.0)     ! diameter, height
+  call tank%init_tk(10.0, 40.0)           ! diameter, height
   call orifice%init_or(tank, 1.0)         ! diameter
   
   print *, "Initialization:"
-  print *, "    tank : z, d, vol =", tank%z(1), tank%d(1), tank%vol(1)
-  print *, "    iorifice : velo, mdot =", orifice%velo(1), orifice%mdot(1)
+  print *, "    Tank : z, d, vol =", tank%z(1), tank%d(1), tank%vol(1)
+  print *, "    Orifice : velo, mdot =", orifice%velo(1), orifice%mdot(1)
 
 
   ! ITERATE
@@ -55,7 +55,6 @@ do i=1, nmax - 1
   if (output0(i, 2) > 5.0 .and. output0(i+1, 2) <= 5.0) then
     i_target = i + 1
     print *, "    the tank has drained down to z=", output0(i_target,2), " m at t=", time(i_target), " sec"
-    print *, ""
   end if
 end do
 close(unit0)
